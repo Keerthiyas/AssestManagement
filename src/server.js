@@ -11,10 +11,10 @@ const app = express();
 // Middleware
 app.use(express.json());
 
-// Connect Database
+
 connectDB();
 
-// Routes
+
 
 
 const PORT = process.env.PORT || 5000;
