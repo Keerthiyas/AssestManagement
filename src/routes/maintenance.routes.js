@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const maintenanceController = require("../controller/maintenance.controller");
+const maintenanceController = require("../controllers/maintenance.controller");
 
 router.post("/", maintenanceController.createMaintenance);
 

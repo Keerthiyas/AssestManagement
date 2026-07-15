@@ -1,5 +1,6 @@
 const assignmentRepository = require("../repositories/assignment.repository");
-const assetRepository = require("../repositories/asset.repository");
+
+const assetRepository = require("../repositories/assest.repository");
 const userRepository = require("../repositories/user.repository");
 
 const createAssignment = async (data) => {

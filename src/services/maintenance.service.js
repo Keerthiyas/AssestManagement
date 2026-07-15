@@ -1,5 +1,5 @@
 const maintenanceRepository = require("../repositories/maintenance.repository");
-const assetRepository = require("../repositories/asset.repository");
+const assetRepository = require("../repositories/assest.repository");
 const vendorRepository = require("../repositories/vendor.repository");
 
 const createMaintenance = async (data) => {

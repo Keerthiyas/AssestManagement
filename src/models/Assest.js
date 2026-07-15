@@ -1,4 +1,4 @@
-const mongoose = requir('mongoose');
+const mongoose = require('mongoose');
 
 const assetSchema = new mongoose.Schema({
     assetcode:{
@@ -61,4 +61,4 @@ const assetSchema = new mongoose.Schema({
 }
 );
 
-module.exports = mongoose.model("Asset", assetSchema);
+module.exports = mongoose.model("Assest", assetSchema);

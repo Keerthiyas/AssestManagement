@@ -1,17 +1,19 @@
-const assest = require('../models/assest.model');
+const assest = require('../models/Assest');
 
 const createAssest = async (data) => {
     return await assest.create(data);
 };
 
 const findByName = async (name) => {
-    return await assest.findOne({ name });
+    return await assest.findOne({ assetname: name });
 };
 
 const findAll = async () => {
     return await assest.find();
 };
-
+const findBySerialNumber = async (serialNumber) => {
+    return await assest.findOne({ serialnumber: serialNumber });
+};
 const findById = async (id) => {
     return await assest.findById(id);
 };
@@ -34,4 +36,5 @@ module.exports = {
     findById,
     update,
     remove,
+    findBySerialNumber,
 };

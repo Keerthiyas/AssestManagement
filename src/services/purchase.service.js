@@ -1,4 +1,4 @@
-const purchaseOrderRepository = require("../repositories/purchaseOrder.repository");
+const purchaseOrderRepository = require("../repositories/purchase.repository");
 const vendorRepository = require("../repositories/vendor.repository");
 const assetRepository = require("../repositories/assest.repository");
 const userRepository = require("../repositories/user.repository");

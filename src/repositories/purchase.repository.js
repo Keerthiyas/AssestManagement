@@ -1,4 +1,4 @@
-const PurchaseOrder = require("../models/PurchaseOrder");
+const PurchaseOrder = require("../models/Purchase");
 
 const createPurchaseOrder = async (data) => {
     return await PurchaseOrder.create(data);
