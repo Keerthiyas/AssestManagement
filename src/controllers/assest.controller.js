@@ -11,12 +11,18 @@ const createAssest = async (req, res) => {
 };
 
 const getAllAssests = async (req, res) => {
-    try {
-        const assests = await assestService.getAllAssests();
-        res.json(assests);
-    } catch (error) {
-        res.status(400).json({error: error.message});
-    }
+
+    const page = parseInt(req.query.page) || 1;
+
+    const limit = parseInt(req.query.limit) || 10;
+
+    const result = await assestService.getAllAssests(page, limit);
+
+    res.status(200).json({
+        success: true,
+        ...result
+    });
+
 };
 
 const getAssestById = async (req, res) => {

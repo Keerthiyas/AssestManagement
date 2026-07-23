@@ -11,6 +11,7 @@ const maintenanceRoutes = require('./routes/maintenance.routes');
 const purchaseRoutes = require('./routes/purchase.routes');
 const assestRoutes = require('./routes/assest.routes');
 const authRoutes = require('./routes/auth.routes');
+const dashboardRoutes = require("./routes/dashboard.routes");
 
 const app = express();
 
@@ -26,6 +27,8 @@ app.use('/api/maintenance', maintenanceRoutes);
 app.use('/api/purchase', purchaseRoutes);
 app.use('/api/assest',assestRoutes);
 app.use('/api/auth',authRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+
 
 // Connect to DB and start server
 connectDB();

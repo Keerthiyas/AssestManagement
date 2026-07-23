@@ -8,8 +8,15 @@ const findByName = async (name) => {
     return await assest.findOne({ assetname: name });
 };
 
-const findAll = async () => {
-    return await assest.find();
+const findAll = async (skip,limit) => {
+    return await assest.find()
+        .populate("category")
+        .populate("vendor")
+        .skip(skip)
+        .limit(limit);
+};
+const countDocuments = async () => {
+    return await Assest.countDocuments();
 };
 const findBySerialNumber = async (serialNumber) => {
     return await assest.findOne({ serialnumber: serialNumber });
@@ -37,4 +44,5 @@ module.exports = {
     update,
     remove,
     findBySerialNumber,
+    countDocuments,
 };

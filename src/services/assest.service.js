@@ -22,8 +22,23 @@ const createAssest = async (data) =>{
     return await assestRepository.createAssest(data);
 };
 
-const getAllAssests = async () =>{
-    return await assestRepository.findAll();
+const getAllAssests = async (page, limit) => {
+
+    const skip = (page - 1) * limit;
+
+    const assets = await assestRepository.findAll(skip, limit);
+
+    const totalRecords = await assestRepository.countDocuments();
+
+    const totalPages = Math.ceil(totalRecords / limit);
+
+    return {
+        page,
+        limit,
+        totalRecords,
+        totalPages,
+        data: assets
+    };
 };
 
 const getAssestById = async (id) =>{

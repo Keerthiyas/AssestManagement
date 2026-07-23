@@ -5,10 +5,12 @@ const router = express.Router();
 const purchaseOrderController = require("../controllers/purchase.controller");
 const authMiddleware = require("../middleware/auth.middleware");
 const authorizeMiddleware = require ("../middleware/authorize.middleware");
+const {createPurchaseValidation} = require("../validation/purchase.validation");
+const validate = require("../middleware/auth.middleware");
 router.use(authMiddleware);
 
 // Create Purchase Order
-router.post("/", authorizeMiddleware("admin","manager"),purchaseOrderController.createPurchaseOrder);
+router.post("/", createPurchaseValidation,validate,authorizeMiddleware("admin","manager"),purchaseOrderController.createPurchaseOrder);
 
 // Get All Purchase Orders
 router.get("/", authorizeMiddleware("admin"),purchaseOrderController.getAllPurchaseOrders);
